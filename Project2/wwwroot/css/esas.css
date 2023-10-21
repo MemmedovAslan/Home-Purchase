@@ -1,0 +1,369 @@
+﻿header {
+    height: 110vh;
+    background-image: linear-gradient(40deg,rgba(0,0,0,0.9),rgba(0,0,0,0)), url(https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max);
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+
+.headeraxtar {
+    width: 100%;
+    padding: 23.5px 0;
+    background-color: rgba(0, 0, 0, 0.6);
+    text-align: center;
+}
+
+    .headeraxtar input {
+        width: 40%;
+        padding: 10px;
+    }
+
+.headerbasliq {
+    width: 40%;
+    min-width: 40%;
+    height: 120px;
+    position: absolute;
+    left: 0;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    animation: basliq 1s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes basliq {
+    from {
+        bottom: 0;
+        opacity: 0;
+    }
+
+    to {
+        bottom: 40%;
+        opacity: 1;
+    }
+}
+
+.headerbasliq h1 {
+    width: 70%;
+    text-align: right;
+    border-right: 3px solid white;
+    padding-right: 25px;
+}
+
+.headerbasliq a {
+    width: 25%;
+    height: 60%;
+    color: white;
+    background-color: #7ed321;
+    text-align: center;
+    padding: 7px;
+    border-radius: 5px;
+    animation: plus .8s infinite;
+    animation-delay: .9s;
+}
+
+    .headerbasliq a i {
+        display: block;
+        font-size: 30px;
+    }
+
+    .headerbasliq a span {
+        font-size: 17px;
+    }
+
+@keyframes plus {
+    0% {
+        transform: scale(1)
+    }
+
+    50% {
+        transform: scale(1.1)
+    }
+
+    100% {
+        transform: scale(1)
+    }
+}
+
+
+
+.altheader {
+    width: 100%;
+    position: relative;
+    padding-bottom: 30px;
+}
+
+.axtaris {
+    position: relative;
+    width: 80%;
+    top: -100px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 5px;
+    background-color: rgb(71, 71, 71);
+    padding: 10px 0;
+    display: flex;
+    align-items: center;
+}
+
+    .axtaris > div {
+        width: 63%;
+        margin: auto;
+    }
+
+        .axtaris > div > div > select, .axtaris > div > div > button{
+            border-radius: 4px;
+            border: none;
+            outline: none;
+            cursor: pointer;
+        }
+
+
+    .axtaris select {
+        width: 160px;
+        height: 40px;
+        text-align: center;
+    }
+
+    .axtaris > div > div:first-child, .axtaris > div > div:nth-child(2) {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin: 10px 0;
+    }
+
+.qiymet {
+    width: 335px;
+    height: 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+    padding-left: 2px;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+    .qiymet h2 {
+        font-size: 14px;
+        font-weight: 400;
+    }
+
+    .qiymet > * {
+        text-align: center;
+        width: 33.3%;
+    }
+
+    .qiymet input {
+        height: 100%;
+        font-size: 15px;
+        outline: none;
+        border: none;
+    }
+
+        .qiymet input:nth-child(2) {
+            border-left: 1px solid gray;
+        }
+
+        .qiymet input:nth-child(3) {
+            border-left: 1px solid gray;
+        }
+
+.axtar {
+    width: 160px;
+    height: 40px;
+}
+
+.etrafliaxtar {
+    width: 160px;
+    height: 40px;
+    background-color: blueviolet;
+    color: rgb(255, 255, 255);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.etrafli {
+    background-color: white;
+    color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: .3s;
+    font-size: 14px;
+    border-radius: 4px;
+}
+
+    .etrafli:hover {
+        background-color: rgb(31, 179, 216);
+        cursor: pointer;
+    }
+
+    .etrafli i {
+        margin-left: 9px;
+        transition: .3s;
+    }
+
+.etraflii {
+    transform: rotate(180deg);
+}
+
+.elave {
+    position: relative;
+    display: none;
+    color: white
+}
+
+    .elave .uli {
+        height: 140px;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        list-style: none;
+        padding-left: 50px;
+    }
+
+        .elave .uli li {
+            padding: 10.5px 0;
+            font-size: 16px;
+        }
+        .elave label:hover{
+            cursor:pointer;
+        }
+
+.elanlar > div {
+    width: 80%;
+    margin: auto;
+}
+
+    .elanlar > div > h2 {
+        width: 12%;
+        font-size: 20px;
+        text-align: center;
+        border-top-left-radius: 5px;
+        border-top-right-radius: 5px;
+        background-color: rgb(31, 179, 216);
+    }
+
+    .elanlar > div > div {
+        border-top: 1px solid rgb(31, 179, 216);
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        padding: 20px 0;
+    }
+
+.elan {
+    width: 24%;
+    height: 267px;
+    box-shadow: 0 0 2px gray;
+    border-radius: 5px;
+    margin: .6% .5%;
+    color: black;
+    overflow: hidden;
+    transition: .5s;
+}
+    .elan:hover {
+        box-shadow: 0 0 10px gray;
+    }
+
+    .elan .sekil {
+        height: 60%;
+        position: relative;
+    }
+
+        .elan .sekil img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .elan .sekil .vip {
+            width: 35%;
+            height: 15%;
+            position: absolute;
+            top: 0;
+            left: -14%;
+            transform: rotate(-60deg);
+            background-color: gold;
+            font-size: 20px;
+            text-align: center;
+        }
+
+#melumat {
+    height: 40%;
+    padding: 5px;
+}
+
+    .axtaris ul, #melumat ul {
+        padding: 0;
+        list-style: none;
+    }
+
+    #melumat > ul > li {
+        margin: 5px 0;
+        text-align: center;
+    }
+
+        #melumat > ul > li:first-child {
+            font-size: 20px;
+            font-weight: 500;
+        }
+
+        #melumat > ul > li:nth-child(2) {
+            font-size: 16px;
+            font-weight: 400;
+            border-top: 1px solid rgb(31, 179, 216);
+            border-bottom: 1px solid rgb(31, 179, 216);
+            margin: 0 !important;
+            padding: 5px;
+        }
+
+    #melumat ul > li:nth-child(3) ul {
+        display: flex;
+    }
+
+        #melumat ul > li:nth-child(3) ul li {
+            width: 33%;
+            font-size: 13px;
+        }
+
+            #melumat ul > li:nth-child(3) ul li span {
+                font-weight: 600;
+            }
+
+
+.orta {
+    width: 100% !important;
+    height: 200px;
+    background-image: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)),url(https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max);
+    background-size: cover;
+    background-attachment: fixed;
+    margin: 10px 0 30px 0 !important;
+    color: white;
+    padding: 50px 0;
+}
+    .orta ul {
+        width: 80%;
+        margin: auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0px;
+    }
+        .orta ul li {
+            text-align: center;
+            list-style: none;
+            font-size: 23px;
+        }
+        .orta ul li i{
+            display: block;
+            margin-bottom: 5px;         
+        }
+            .orta ul li span {
+                display: block;
+                margin-top: 5px;
+            }
+
+

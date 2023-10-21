@@ -1,0 +1,9 @@
+﻿.elaveet {
+    width: 3%;
+    text-align: center;
+    font-size: 27px;
+    border: 1px solid gray;
+    position: absolute;
+    right: 2%;
+    color: #34C759;
+}

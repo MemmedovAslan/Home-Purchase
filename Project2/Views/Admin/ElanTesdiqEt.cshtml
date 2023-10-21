@@ -1,0 +1,18 @@
+﻿@section css{
+    <link href="/css/admin/elanlar.css" rel="stylesheet" />
+}
+
+@model List<Elan>
+
+<div class="elanlar">
+    <div class="adi admin">
+        <h2>Gözləyən elanlar</h2>
+        <div class="adi1">
+            @foreach (var item in Model)
+            {
+                @await Html.PartialAsync("~/Views/Shared/_elan.cshtml", item)
+            }
+        </div>
+    </div>
+</div>
+

@@ -1,0 +1,12 @@
+﻿@section css{
+    <link rel="stylesheet" href="/css/reyduzelt.css">
+}
+
+@model Rey
+
+<section>
+    <form action="/Home/ReyDuzelt/@Model.ReyId" method="post">
+        <textarea name="ReyOzu">@Model.ReyOzu</textarea>
+        <button>Təsdiq et</button>
+    </form>
+</section>

@@ -1,0 +1,24 @@
+﻿@model Elan
+
+<a @*href="/Admin/Elan/@Model.ElanId"*@ href="@(ViewContext.RouteData.Values["Controller"].ToString()=="Admin" ? "/Admin/Elan/":"/Home/Elan/")@Model.ElanId @*new{ElanId = @Model.ElanId}*@" class="elan">
+    <div class="sekil">
+        <img src="/img/@Model.Sekils.ToList()[0].SekilAd">
+        @if (Model.ElanNovId == 1)
+        {
+            <p class="vip">VIP</p>
+        }
+    </div>
+    <div id="melumat">
+        <ul>
+            <li>@string.Format("{0:N0}", Model.ElanQiymet) <span>AZN</span></li>
+            <li>@Model.ElanSeher.SeherAd | @Model.ElanRayon.RayonAd rayonu</li>
+            <li>
+                <ul>
+                    <li><span>@Model.ElanOtaqsayi</span> otaqlı</li>
+                    <li><span>@Model.ElanMertebesayi/@Model.ElanUmumiMertebesayi</span> mərtəbə</li>
+                    <li><span>50</span> m2</li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+</a>

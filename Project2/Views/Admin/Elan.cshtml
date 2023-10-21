@@ -1,0 +1,119 @@
+﻿@section css{
+    <link rel="stylesheet" href="/css/elan.css">
+}
+
+@model Project2.Controllers.AdminController.Elanss
+
+<section class="elanetrafli">
+    <div style="width: 90%;" class="elanetrafli1 admin">
+        <div style="background-color: #2a3042" class="sekiller">
+            <div class="esassekil">
+                <img src="/img/@Model.elan.Sekils.ToList()[0].SekilAd">
+            </div>
+            <div class="digersekiller">
+                @for (int i = 1; i < Model.elan.Sekils.ToList().Count; i++)
+                {
+                    <img src="/img/@Model.elan.Sekils.ToList()[i].SekilAd">
+                }
+            </div>
+
+        </div>
+        <div class="melumat admin">
+            <div style="background-color: #222735" class="melumat1">
+                <h2>@(Model.elan.ElanSkid == 1 ? "Satılır" : "Kirayə verilir") @Model.elan.ElanOtaqsayi otaqlı @Model.elan.ElanTip.TipAd.ToLower() @Model.elan.ElanSahe m², @Model.elan.ElanRayon.RayonAd rayonu</h2>
+                <form action="/Home/ElanVipEt/@Model.elan.ElanId" method="post">
+                    <button class="vipet">Elanı VIP et</button>
+                </form>
+            </div>
+            <div style="background-color: #222735" class="melumat2">
+                <div class="melumat2sol">
+                    <h2>
+                        @string.Format("{0:N0}", Model.elan.ElanQiymet)
+                        @*@if (Model.elan.ElanQiymet.ToString().Length > 3 && Model.elan.ElanQiymet.ToString().Length <= 6)
+                            {
+                                @Model.elan.ElanQiymet.ToString().Insert(Model.elan.ElanQiymet.ToString().Length - 3, " ")
+                            }
+                            else if (Model.elan.ElanQiymet.ToString().Length > 6)
+                            {
+                                @Model.elan.ElanQiymet.ToString().Insert(Model.elan.ElanQiymet.ToString().Length - 3, " ").Insert(Model.elan.ElanQiymet.ToString().Length - 6, " ")
+                            }
+                            else @Model.elan.ElanQiymet*@
+                        <span>AZN</span>
+                    </h2>
+                </div>
+                <div class="melumat2sag">
+                    <h3>@Model.elan.ElanPerson.PersonNomre</h3>
+                    <h3>@Model.elan.ElanPerson.PersonAd</h3>
+                </div>
+            </div>
+            <div style="background-color: #2a3042" class="melumat3">
+                <div class="melumat3sol">
+                    <div><h3>Şəhər</h3><h3>@Model.elan.ElanSeher.SeherAd</h3></div>
+                    <div><h3>Kateqoriya</h3><h3>@Model.elan.ElanTip.TipAd</h3></div>
+                    <div><h3>Mərtəbə</h3><h3>@Model.elan.ElanMertebesayi / @Model.elan.ElanUmumiMertebesayi</h3></div>
+                    <div><h3>Sahə</h3><h3>	@Model.elan.ElanSahe m²</h3></div>
+                    <div><h3>Otaq sayı</h3><h3>	@Model.elan.ElanOtaqsayi</h3></div>
+                </div>
+                <div class="melumat3sag">
+                    <div>
+                        <ul>
+                            @*<li style="@(Model.ElanInternet == true ? "" : "display: none")"> İnternet </li>*@
+                            <li><i class="@(Model.elan.ElanInternet == true ? "fas fa-check":"fa-solid fa-xmark")"></i>İnternet</li>
+                            <li><i class="@(Model.elan.ElanLift == true ? "fas fa-check":"fa-solid fa-xmark")"></i>Lift</li>
+                            <li><i class="@(Model.elan.ElanQaz == true ? "fas fa-check":"fa-solid fa-xmark")"></i>Qaz</li>
+                            <li><i class="@(Model.elan.ElanKupça == true ? "fas fa-check":"fa-solid fa-xmark")"></i>Kupça</li>
+                            <li><i class="@(Model.elan.ElanTelefon == true ? "fas fa-check":"fa-solid fa-xmark")"></i>Telefon</li>
+                            <li><i class="@(Model.elan.ElanKombi == true ? "fas fa-check":"fa-solid fa-xmark")"></i>Kombi</li>
+                            <li><i class="@(Model.elan.ElanKondisioner == true ? "fas fa-check":"fa-solid fa-xmark")"></i>Kondisioner</li>
+                            <li><i class="@(Model.elan.ElanTemir == true ? "fas fa-check":"fa-solid fa-xmark")"></i>Temir</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <p>
+                            @Model.elan.ElanMelumat
+                        </p>
+                    </div>
+
+                    <div>
+                        <a href="/Home/ElanDuzelt/@Model.elan.ElanId">Düzəliş et</a>
+                        <a href="/Home/ElanSil/@Model.elan.ElanId">Elanı sil</a>
+                        @*<a href="/Admin/ElanBlokEt/@Model.elan.ElanId">Elanı blokla</a>*@
+                    </div>
+                </div>
+            </div>
+            @{
+                if (Model.rey.Count() > 0)
+                {
+                    <div style="background-color: #222735" class="kommentler">
+                        <div style="width: 100%" class="kommentler1">
+                            @foreach (var item in Model.rey)
+                            {
+                                <div class="komment">
+                                    @*<h4>@Model.person.SingleOrDefault(x=> x.PersonId == item.ReyPersonId).PersonIstifadeciAdi</h4*@
+                                    <h4>@item.ReyPerson.PersonAd @item.ReyPerson.PersonSoyad</h4>
+                                    <p>@item.ReyOzu</p>
+
+                                    <div class="edit">
+                                        <a class="reyduzelt" href="~/Home/ReyDuzelt/@item.ReyId"><i class="fa-solid fa-pen-to-square"></i></a>
+                                        <a class="reysil" href="~/Home/ReySil/@item.ReyId"><i class="fa-solid fa-trash-can"></i></a>
+                                    </div>
+                                </div>
+                            }
+                        </div>
+                    </div>
+                }
+            }
+        </div>
+        @if (Model.elan.ElanStatus == false)
+        {
+            <div class="aktivlesdirme">
+                <form action="~/Admin/ElanTesdiqEt/@Model.elan.ElanId" method="post">
+                    <button><i class="fas fa-check"></i></button>
+                </form>
+                <form action="~/Admin/ElanTesdiqEtme/@Model.elan.ElanId" method="post">
+                    <button><i class="fa-solid fa-xmark"></i></button>
+                </form>
+            </div>
+        }
+    </div>
+</section>

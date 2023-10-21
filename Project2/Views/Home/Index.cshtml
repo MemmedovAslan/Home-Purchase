@@ -1,0 +1,158 @@
+﻿@section css{
+    <link rel="stylesheet" href="/css/esas.css">
+}
+
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+@model Project2.Controllers.HomeController.Nov
+
+<header>
+    <div class="headeraxtar">
+        <input type="text" placeholder="Axtar">
+    </div>
+    <div class="headerbasliq">
+        <h1>Öz elanını buradan yerləşdirə bilərsən</h1>
+        <a href="~/Home/ElanYerlesdir" class="yerlesdirmek"><i class="fa-solid fa-plus"></i> <span>Elan yerləşdir</span></a>
+    </div>
+</header>
+<section class="altheader darkk">
+
+    <form class="axtaris" method="get" asp-action="Axtaris" asp-controller="Home">
+        <div>
+            <div>
+                <select name="ElanSkid" asp-items="ViewBag.SK">
+                    @*selected disabled ---- seçilmiş halda görsənir sonradan seçmək olmur*@
+                    <option value="">Alqı-Satqı</option>
+                </select>
+                <select class="seher" name="ElanSeherId" asp-items="ViewBag.Seher">
+                    <option value="">Şəhər</option>
+                </select>
+                <select class="otaq" name="ElanOtaqsayi">
+                    <option value="">Otaq sayı</option>
+                    @for (int i = 1; i < 5; i++)
+                    {
+                        <option value="@i">@i</option>
+                    }
+                    <option value="5">5 və daha çox</option>
+                </select>
+                <div class="etrafli axtar">Ətraflı axtarış <i class="fa-solid fa-angle-down"></i></div>
+            </div>
+            <div>
+                <select name="ElanTipId" asp-items="ViewBag.Tip">
+                    <option value="">Kateqoriya</option>
+                </select>
+                <div class="qiymet">
+                    <h2>Qiymət</h2>
+                    <input type="number" placeholder="min" name="MinQiymet">
+                    <input type="number" placeholder="max" name="MaxQiymet">
+                </div>
+                <button class="axtar">Axtar</button>
+            </div>
+            <div class="elave">
+                <h2>Mülkün təchizatı</h2>
+                <div class="orta1">
+                    <ul class="uli">
+                        <li>
+                            <label>
+                                @Html.CheckBox("ElanInternet", false)
+                                İnternet
+                            </label>
+                        </li>
+                        <li>
+                            @*<label><input type="checkbox" name="ElanLift" value="false" />Lift</label>*@
+                            <label>
+                                @Html.CheckBox("ElanLift", false)
+                                Lift
+                            </label>
+                        </li>
+                        <li>
+                            <label>
+                                @Html.CheckBox("ElanQaz", false)
+                                Qaz
+                            </label>
+                        </li>
+                        <li>
+                            <label>
+                                @Html.CheckBox("ElanKupça", false)
+                                Kupça
+                            </label>
+                        </li>
+                        <li>
+                            <label>
+                                @Html.CheckBox("ElanTelefon", false)
+                                Telefon
+                            </label>
+                        </li>
+                        <li>
+                            <label>
+                                @Html.CheckBox("ElanKombi", false)
+                                Kombi
+                            </label>
+                        </li>
+                        <li>
+                            <label>
+                                @Html.CheckBox("ElanKondisioner", false)
+                                Kondisioner
+                            </label>
+                        </li>
+                        <li>
+                            <label>
+                                @Html.CheckBox("ElanTemir", false)
+                                Temir
+                            </label>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </form>
+
+    <div class="elanlar">
+        <div class="vip">
+            <h2>VIP elanlar</h2>
+            <div class="vip1">
+                @foreach (var item in Model.vip)
+                {
+                    @await Html.PartialAsync("~/Views/Shared/_elan.cshtml", item)
+                }
+            </div>
+        </div>
+        <div class="orta">
+            <ul>
+                <li><i class="fa-solid fa-users"></i>@Model.usercount<span>İstifadəçi</span></li>
+                <li><i class="fa-solid fa-house-fire"></i>@Model.vip.Count()<span>VIP elan</span></li>
+                <li><i class="fa-solid fa-house-chimney"></i>@Model.normal.Count()<span>Ümumi elan</span></li>
+            </ul>
+        </div>
+        <div class="adi">
+            <h2>Son elanlar</h2>
+            <div class="adi1">
+                @foreach (var item in Model.normal)
+                {
+                    @await Html.PartialAsync("~/Views/Shared/_elan.cshtml", item)
+                }
+            </div>
+            @{
+                int pg = (string.IsNullOrEmpty(Context.Request.Query["Page"]) ? 0 : int.Parse(Context.Request.Query["Page"]));
+            }
+            <ul class="pagination">
+                <li class="@(pg==0 ? "disabled" : "")">
+                    <a href="?page=@(pg-1)" aria-label="Previous">
+                        <span aria-hidden="true">&laquo;</span>
+                    </a>
+                </li>
+                @for (int i = 0; i < ViewBag.SehifeSayi; i++)
+                {
+                    <li class=@(pg == i ? "active": "")><a href="?page=@i">@(i+1)</a></li>
+                }
+                <li class="@(pg==(ViewBag.SehifeSayi - 1) ? "disabled" : "")">
+                    <a href="?page=@(pg+1)" aria-label="Next">
+                        <span aria-hidden="true">&raquo;</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+</section>
+

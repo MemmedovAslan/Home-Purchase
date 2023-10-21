@@ -1,0 +1,24 @@
+﻿@section css{
+    <link rel="stylesheet" href="/css/elanyerlesdir.css">
+}
+
+
+@addTagHelper *,Microsoft.AspNetCore.Mvc.TagHelpers
+@model Person
+
+<section class="elanyerlesdir login">
+    <form asp-action="Qeydiyyat" asp-controller="User" method="post" class="elanyerlesdir1 login1">
+        <div>
+
+            <input placeholder="Ad" asp-for="PersonAd">
+            <input placeholder="Soyad" asp-for="PersonSoyad">
+            <input placeholder="İstifadəçi adı" asp-for="PersonIstifadeciAdi">
+            <input placeholder="Parol" asp-for="PersonParol">
+            <input placeholder="Nömrə" asp-for="PersonNomre">
+            <input placeholder="Email" asp-for="PersonEmail">
+
+            <button>Daxil et</button>
+            <a href="/User/Login">Loqin</a>
+        </div>
+    </form>
+</section>

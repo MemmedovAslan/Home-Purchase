@@ -1,0 +1,20 @@
+﻿@section css{
+    <link rel="stylesheet" href="/css/elanyerlesdir.css">
+}
+
+
+@addTagHelper *,Microsoft.AspNetCore.Mvc.TagHelpers
+@model Person
+
+<section class="elanyerlesdir login">
+    <form asp-action="Login" asp-controller="User" class="elanyerlesdir1 login1">
+        <div>
+
+            <input placeholder="Ad" asp-for="PersonIstifadeciAdi">
+            <input placeholder="Parol" asp-for="PersonParol">
+
+            <button>Daxil ol</button>
+        </div>
+    <a href="/User/Qeydiyyat">Qeydiyyat</a>
+    </form>
+</section>

@@ -1,0 +1,40 @@
+﻿@section css{
+    <link href="/css/admin/istifadeciduzelt.css" rel="stylesheet" />
+}
+
+
+@addTagHelper *,Microsoft.AspNetCore.Mvc.TagHelpers
+
+@model Person
+
+<section>
+
+    <form asp-action="IstifadeciDuzelt" asp-controller="Admin" method="post">
+        <label>
+            <span>İstifadəçi adı:</span>
+            <input asp-for="PersonIstifadeciAdi">
+        </label>
+        <label>
+            <span>Ad:</span>
+            <input asp-for="PersonAd">
+        </label>
+        <label>
+            <span>Soyad:</span>
+            <input asp-for="PersonSoyad">
+        </label>
+        <label>
+            <span>Parol:</span>
+            <input asp-for="PersonParol">
+        </label>
+        <label>
+            <span>Nömrə:</span>
+            <input asp-for="PersonNomre">
+        </label>
+        <label>
+            <span>E-mail:</span>
+            <input asp-for="PersonEmail">
+        </label>
+        <button>Düzəlt</button>
+    </form>
+
+</section>

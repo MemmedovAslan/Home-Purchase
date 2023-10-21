@@ -1,0 +1,108 @@
+﻿@section css{
+    <link rel="stylesheet" href="/css/elanyerlesdir.css">
+}
+
+@model Elan
+
+<section class="elanyerlesdir">
+    <form action="/Home/ElanDuzelt/@Model.ElanId" method="post" class="elanyerlesdir1" enctype="multipart/form-data">
+        <div>
+            <select name="ElanSKId">
+                @foreach (var item in ViewBag.SK)
+                {
+                    <option value="@item.Skid" @(Model.ElanSkid == item.Skid ? "selected" : "")>@item.Skad</option>
+                }
+            </select>
+            <select name="ElanTipId">
+                @foreach (var item in ViewBag.Tip)
+                {
+                    <option value="@item.TipId" @(Model.ElanTipId == item.TipId ? "selected" : "")>@item.TipAd</option>
+                }
+            </select>
+            <input type="text" placeholder="Otaq sayı" name="ElanOtaqsayi" value="@Model.ElanOtaqsayi">
+            <input type="text" placeholder="Mərtəbə" name="ElanMertebesayi" value="@Model.ElanMertebesayi">
+            <input type="text" placeholder="Ümumi mərtəbə sayı" name="ElanUmumiMertebesayi" value="@Model.ElanUmumiMertebesayi">
+            <select name="ElanSeherId">
+                @foreach (var item in ViewBag.Seher)
+                {
+                    <option value="@item.SeherId" @(Model.ElanSeherId == item.SeherId ? "selected" : "")>@item.SeherAd</option>
+                }
+            </select>
+            <select name="ElanRayonId">
+                @foreach (var item in ViewBag.Rayon)
+                {
+                    <option value="@item.RayonId" @(Model.ElanRayonId == item.RayonId ? "selected" : "")>@item.RayonAd</option>
+                }
+            </select>
+            <input type="text" placeholder="Ünvan" name="ElanUnvan" value="@Model.ElanUnvan">
+            <input type="text" placeholder="Qiymət" name="ElanQiymet" value="@Model.ElanQiymet">
+            <input type="text" placeholder="Sahə" name="ElanSahe" value="@Model.ElanSahe">
+            <textarea placeholder="Əlavə məlumat" name="ElanMelumat">@Model.ElanMelumat</textarea>
+
+            <hr style="margin: 20px 0;" />
+            <ul class="uli">
+                <li>
+                    <label>
+                        @Html.CheckBox("ElanInternet", (Model.ElanInternet == true ? true : false))
+                        İnternet
+                    </label>
+                </li>
+                <li>
+                    <label>
+                        @Html.CheckBox("ElanLift", (Model.ElanLift == true ? true : false))
+                        Lift
+                    </label>
+                </li>
+                <li>
+                    <label>
+                        @Html.CheckBox("ElanQaz", (Model.ElanQaz == true ? true : false))
+                        Qaz
+                    </label>
+                </li>
+                <li>
+                    <label>
+                        @Html.CheckBox("ElanKupça", (Model.ElanKupça == true ? true : false))
+                        Kupça
+                    </label>
+                </li>
+                <li>
+                    <label>
+                        @Html.CheckBox("ElanTelefon", (Model.ElanTelefon == true ? true : false))
+                        Telefon
+                    </label>
+                </li>
+                <li>
+                    <label>
+                        @Html.CheckBox("ElanKombi", (Model.ElanKombi == true ? true : false))
+                        Kombi
+                    </label>
+                </li>
+                <li>
+                    <label>
+                        @Html.CheckBox("ElanKondisioner", (Model.ElanKondisioner == true ? true : false))
+                        Kondisioner
+                    </label>
+                </li>
+                <li>
+                    <label>
+                        @Html.CheckBox("ElanTemir", (Model.ElanTemir == true ? true : false))
+                        Temir
+                    </label>
+                </li>
+            </ul>
+            <hr style="margin: 20px 0;" />
+
+            <input type="file" multiple name="Sekil">
+            <div class="duzeltsekiller">
+                @foreach (var item in Model.Sekils)
+                {
+                    <div>
+                        <a href="/Home/SekilSil/@item.SekilId">x</a>
+                        <img src="/img/@item.SekilAd">
+                    </div>
+                }
+            </div>
+            <button>Yerləşdir</button>
+        </div>
+    </form>
+</section>

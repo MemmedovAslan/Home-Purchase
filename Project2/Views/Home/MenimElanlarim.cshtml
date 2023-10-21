@@ -1,0 +1,34 @@
+﻿@section css{
+    <link rel="stylesheet" href="/css/menimelanlarim.css">
+}
+
+@model Project2.Controllers.HomeController.Nov
+
+
+    <section>
+        <div class="elanlar">
+            <div class="vip">
+                <h2>VIP elanlarım</h2>
+                <div class="vip1">
+                    @foreach (var item in Model.vip)
+                    {
+                        @await Html.PartialAsync("~/Views/Shared/_elan.cshtml", item)
+                    }
+                </div>
+            </div>
+
+            <div class="adi">
+                <h2>Bütün elanlarım</h2>
+                <div class="adi1">
+                    @foreach (var item in Model.normal)
+                    {
+                        @await Html.PartialAsync("~/Views/Shared/_elan.cshtml", item)
+                    }
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+
+

@@ -1,0 +1,34 @@
+﻿<nav class="dark">
+    <a href="/" class="logo">
+        <img src="/img/clipart204002.png">
+    </a>
+    <div class="navsag">
+        <ul>
+            <li><a href="/Home/Index/1">Satış</a></li>
+            <li><a href="/Home/Index/2">Kirayə</a></li>
+                @if (User.Identity.IsAuthenticated)
+                {
+                    <li><a href="/Home/MenimElanlarim">Mənim elanlarım</a></li>
+                    <li class="giris">
+                        @await Component.InvokeAsync("User")
+                        <div class="giris1">
+                            <a href="~/User/LogOut">Çıxış et</a>
+                        </div>
+                    </li>
+                }
+                else
+                {
+                    <li class="giris">
+                        Giriş
+                        <div class="giris1">
+                            <a href="~/User/Login">Daxil ol</a>
+                            <a href="~/User/Qeydiyyat">Qeydiyyat</a>
+                        </div>
+                    </li>
+                }
+            <li class="darkmode">
+                <div class="circle"></div>
+            </li>
+        </ul>
+    </div>
+</nav>

@@ -1,0 +1,237 @@
+﻿* {
+    margin: 0;
+    box-sizing: border-box;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+a {
+    text-decoration: none;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgb(31, 179, 216);
+    padding: 10px 200px;
+}
+
+    nav .logo {
+        width: 4%;
+        cursor: pointer;
+    }
+
+        nav .logo img {
+            width: 100%;
+        }
+
+    nav ul {
+        display: flex;
+        font-size: 18px;
+    }
+
+        nav ul li {
+            list-style: none;
+            margin-left: 50px;
+            cursor: pointer;
+            transition: .3s;
+        }
+
+            nav ul li:hover {
+                color: white;
+            }
+
+    nav .darkmode {
+        width: 51px;
+        height: 31px;
+        background-color: gray;
+        border-bottom-left-radius: 15px;
+        border-top-left-radius: 15px;
+        border-bottom-right-radius: 15px;
+        border-top-right-radius: 15px;
+        transition: .5s;
+    }
+
+    nav .darkmode1 {
+        background-color: #34C759;
+    }
+
+    nav .circle {
+        width: 50%;
+        height: 27px;
+        border-radius: 50%;
+        background-color: white;
+        position: relative;
+        top: 50%;
+        transform: translateY(-50%);
+        left: 4%;
+        transition: .5s;
+    }
+
+    nav .circle1 {
+        left: 44%;
+    }
+
+.navsag {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+    .navsag a {
+        color: black;
+        display: block;
+        transition: .3s;
+    }
+
+    .navsag li:first-child:hover a, .navsag li:nth-child(2):hover a {
+        color: white;
+    }
+
+.giris {
+    position: relative;
+}
+
+.giris1 {
+    width: 150px;
+    position: absolute;
+    left: -60%;
+    background-color: white;
+    padding: 10px 15px;
+    border: 1px solid gray;
+    display: none;
+    z-index: 2;
+    text-align: center;
+}
+
+
+footer {
+    background-color: rgb(31, 179, 216);
+    padding: 30px 0;
+}
+
+    footer .asagi {
+        width: 85%;
+        margin: auto;
+        display: flex;
+        justify-content: space-between;
+        padding: 40px;
+        border-radius: 5px;
+    }
+
+        footer .asagi > div {
+            width: 33%;
+        }
+
+        footer .asagi ul li:first-child {
+            font-size: 21px;
+            font-weight: 600;
+            margin: 0 0 20px 0;
+        }
+
+        footer .asagi ul li {
+            list-style: none;
+            font-size: 16px;
+            margin: 10px 0;
+        }
+
+
+    footer .asagisag ul {
+        text-align: center;
+    }
+
+        footer .asagisag ul li i {
+            font-size: 20px;
+        }
+
+
+.fa-facebook {
+    color: blue;
+}
+
+.fa-instagram {
+    color: blueviolet;
+}
+
+.fa-whatsapp {
+    color: green;
+}
+
+
+.dark1 {
+    background-color: #2a3042 !important;
+    color: white;
+}
+
+    .dark1 .logo img {
+        filter: brightness(4);
+    }
+
+    .dark1 li a {
+        color: white;
+        transition: .5s;
+    }
+
+    .dark1 .asagi i {
+        filter: brightness(2);
+    }
+
+.darkk1 {
+    background-color: #222735 !important;
+    color: white;
+}
+
+    .darkk1 a {
+        color: white;
+    }
+
+
+.pagination {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    margin: 20px auto;
+    padding: 0;
+    font-size: 20px;
+}
+
+    .pagination li {
+        margin: 0 3px;
+        padding: 0 7px;
+        border: 1px solid rgb(21, 159, 206);
+        border-radius: 4px;
+        transition: .4s;
+        cursor: pointer;
+    }
+
+        .pagination li:hover {
+            background-color: rgb(21, 159, 206);
+        }
+
+            .pagination li:hover a {
+                color: white;
+            }
+
+        .pagination li a {
+            color: rgb(21, 159, 206);
+            transition: .4s;
+        }
+
+.active {
+    background-color: rgb(21, 159, 206);
+}
+
+    .active a {
+        color: white !important;
+    }
+
+.disabled {
+    background-color: transparent !important;
+    border-color: gray !important;
+    pointer-events: none;
+}
+
+    .disabled a {
+        color: gray !important;
+    }

@@ -1,0 +1,35 @@
+﻿@model List<Person>
+
+<table border="1">
+    <tr>
+        <th>İstifadəçi adı</th>
+        <th>Ad</th>
+        <th>Soyad</th>
+        <th>Parol</th>
+        <th>Nömrə</th>
+        <th>E-mail</th>
+        <th>Düzəliş</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.PersonIstifadeciAdi</td>
+            <td>@item.PersonAd</td>
+            <td>@item.PersonSoyad</td>
+            <td>@item.PersonParol</td>
+            <td>@item.PersonNomre</td>
+            <td>@item.PersonEmail</td>
+            <td>
+                <a href="~/Admin/IstifadeciDuzelt/@item.PersonId"><i class="fa-solid fa-pen"></i></a>
+                @if (item.PersonStatus != false)
+                {
+                    <a href="~/Admin/IstifadeciBlokla/@item.PersonId"><i class="fa-solid fa-lock"></i></a>
+                }
+                else
+                {
+                    <a href="~/Admin/IstifadeciBlokdanCixart/@item.PersonId"><i class="fa-solid fa-lock-open"></i></a>
+                }
+            </td>
+        </tr>
+    }
+</table> 

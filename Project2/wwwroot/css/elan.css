@@ -1,0 +1,364 @@
+﻿.elanetrafli {
+    padding: 20px 0;
+}
+
+.elanetrafli1 {
+    width: 80%;
+    margin: auto;
+}
+
+    .elanetrafli1.admin {
+        border: 1px solid #96a2b4;
+        position: relative;
+    }
+
+.elanetrafli .aktivlesdirme {
+    position: absolute;
+    top: 0;
+    right: -4.1%;
+    width: 4%;
+}
+
+    .elanetrafli .aktivlesdirme form button {
+        border: none;
+        width: 60%;
+        height: 50px;
+        margin: 5px 0;
+        border-top-right-radius: 10px;
+        border-bottom-right-radius: 10px;
+        transition: .5s;
+        font-size: 20px;
+    }
+
+    .elanetrafli .aktivlesdirme form:first-child button {
+        background-color: #34C759;
+    }
+
+    .elanetrafli .aktivlesdirme form:last-child button {
+        background-color: red;
+    }
+
+    .elanetrafli .aktivlesdirme form button:hover {
+        width: 100%;
+    }
+
+.sekiller {
+    height: 350px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgb(43, 43, 43);
+    padding: 20px;
+}
+
+    .sekiller div {
+        height: 100%;
+    }
+
+.esassekil {
+    width: 45%;
+}
+
+    .esassekil img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+.digersekiller {
+    width: 52%;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+    .digersekiller img {
+        width: 24%;
+        height: 24%;
+        margin: 0.5%;
+        object-fit: cover;
+        object-position: center;
+    }
+
+
+.melumat {
+    border: 1px solid rgb(31, 179, 216);
+}
+
+    .melumat.admin {
+        border: none;
+    }
+
+.melumat1 {
+    padding: 10px 20px;
+    background-color: rgb(210, 210, 210);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+    .melumat1 .vipet {
+        background-color: gold;
+        color: black;
+        border: none;
+        font-size: 20px;
+        padding: 5px;
+        border-radius: 5px;
+    }
+
+        .melumat1 .vipet:hover {
+            cursor: pointer;
+        }
+
+.melumat2 {
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    background-color: rgb(210, 210, 210);
+    margin: 1px 0;
+    height: 70px;
+}
+
+
+.melumat2sol {
+    background-color: rgb(31, 179, 216);
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    margin-right: 60px;
+    position: relative;
+    border-radius: 5px;
+}
+
+    .melumat2sol span {
+        position: relative;
+        font-size: 15px;
+        top: -10px;
+    }
+
+.melumat3 {
+    padding: 30px 40px 30px 20px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.melumat3sol > div {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 30px 10px 0;
+    border-top: 1px solid rgb(190, 190, 190);
+}
+
+.melumat3sol h3 {
+    font-size: 16px;
+}
+
+.melumat3sol > div > h3:last-child {
+    min-width: 100px;
+    font-weight: 500;
+    text-align: left;
+}
+
+.melumat3sol > div > h3:first-child {
+    padding-left: 10px;
+}
+
+.melumat3sol {
+    width: 35%;
+}
+
+.melumat3sag {
+    width: 55%;
+}
+
+    .melumat3sag li {
+        padding: 10.5px 0;
+        font-size: 16px;
+    }
+
+        .melumat3sag li i {
+            margin-right: 5px;
+        }
+
+        .melumat3sag li .fa-check {
+            color: rgb(11, 99, 255);
+        }
+
+        .melumat3sag li .fa-xmark {
+            color: red;
+        }
+
+    .melumat3sag > div:first-child {
+        height: 170px;
+        border-bottom: 1px solid rgb(190, 190, 190);
+        border-top: 1px solid rgb(190, 190, 190);
+    }
+
+    .melumat3sag ul {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        padding: 0 20px;
+        list-style: none;
+    }
+
+    .melumat3sag a {
+        color: black;
+        padding: 5px 10px;
+        border-radius: 5px;
+        background-color: rgb(31, 179, 216);
+    }
+
+        .melumat3sag a:last-child {
+            background-color: red !important;
+            color: white;
+        }
+
+    .melumat3sag > div:nth-child(2) {
+        margin: 20px 0;
+    }
+
+.oxsarelanlar h1 {
+    margin-left: 140px;
+}
+
+.line {
+    width: 80%;
+    margin: 20px auto;
+    height: 1px;
+    background-color: rgb(31, 179, 216);
+    border: none;
+}
+
+.adi {
+    width: 80%;
+    margin: 30px auto 30px auto;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.elan {
+    width: 24%;
+    height: 267px;
+    box-shadow: 0 0 10px gray;
+    border-radius: 5px;
+    overflow: hidden;
+    margin: .6% .5%;
+    color: black;
+}
+
+    .elan .sekil {
+        height: 60%;
+    }
+
+        .elan .sekil img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+.kommentler {
+    background-color: rgb(210, 210, 210);
+    padding: 30px 40px 30px 20px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.komment {
+    margin: 15px 0;
+}
+
+    .komment .edit {
+        margin: 2px 0 30px 0;
+    }
+
+    .komment a i {
+        font-size: 14px;
+    }
+
+    .komment .reyduzelt {
+        color: rgb(11, 99, 255);
+        margin-right: 5px;
+    }
+
+    .komment .reysil {
+        color: red;
+    }
+
+    .komment:first-child {
+        margin: 0 0 15px 0;
+    }
+
+    .komment h4 {
+        font-weight: 600;
+        margin-bottom: 3px;
+    }
+
+.kommentler1 {
+    width: 55%;
+}
+
+.kommentbildir {
+    width: 35%;
+    text-align: right;
+    /*    position: sticky;
+    top: 0;
+    left: 0;
+???????????*/
+}
+
+    .kommentbildir textarea {
+        width: 100%;
+        height: 100px;
+        resize: none;
+        margin-bottom: 10px;
+    }
+
+
+
+
+
+
+#melumat {
+    height: 40%;
+    padding: 5px;
+}
+
+    #melumat ul {
+        padding: 0;
+        list-style: none;
+    }
+
+    #melumat > ul > li {
+        margin: 5px 0;
+        text-align: center;
+    }
+
+        #melumat > ul > li:first-child {
+            font-size: 20px;
+            font-weight: 500;
+        }
+
+        #melumat > ul > li:nth-child(2) {
+            font-size: 16px;
+            font-weight: 400;
+            border-top: 1px solid rgb(31, 179, 216);
+            border-bottom: 1px solid rgb(31, 179, 216);
+            margin: 0 !important;
+            padding: 5px;
+        }
+
+    #melumat ul > li:nth-child(3) ul {
+        display: flex;
+    }
+
+        #melumat ul > li:nth-child(3) ul li {
+            width: 33%;
+            font-size: 13px;
+        }
+
+            #melumat ul > li:nth-child(3) ul li span {
+                font-weight: 600;
+            }

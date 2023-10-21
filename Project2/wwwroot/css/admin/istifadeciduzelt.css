@@ -1,0 +1,46 @@
+﻿section{
+    padding: 100px 0
+}
+form {
+    width: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    border: 1px solid #96a2b4;
+    padding: 10px;
+}
+
+label {
+    display: inline-block;
+    width: 100%;
+    margin: 20px 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+    label span {
+        font-size: 30px;
+        width: 27%;
+        display: inline-block;
+        text-align: right;
+    }
+
+    label input {
+        font-size: 25px;
+        width: 70%;
+        padding: 0 10px;
+        border: none;
+        border-radius: 5px;
+    }
+
+button {
+    position: relative;
+    width: 70%;
+    left: 30%;
+    font-size: 20px;
+    background-color: rgb(31, 179, 216);
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+}

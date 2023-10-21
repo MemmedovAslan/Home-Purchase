@@ -1,0 +1,9 @@
+﻿section{
+    padding: 100px;
+}
+textarea{
+    font-size: 25px;
+    width: 70%;
+    margin: auto;
+    height: 200px;
+}

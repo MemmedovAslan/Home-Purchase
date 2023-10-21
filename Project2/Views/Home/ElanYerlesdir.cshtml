@@ -1,0 +1,77 @@
+﻿@section css{
+    <link rel="stylesheet" href="/css/elanyerlesdir.css">
+}
+
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+@model Elan
+
+
+<section class="elanyerlesdir">
+    <form asp-action="ElanYerlesdir" asp-controller="Home" method="post" class="elanyerlesdir1" enctype="multipart/form-data">
+        <div>
+            <input placeholder="Ünvan" asp-for="ElanUnvan">
+            <select asp-for="ElanSkid" asp-items="ViewBag.SK">
+            </select>
+            <select asp-for="ElanTipId" asp-items="ViewBag.Tip">
+            </select>
+            <input placeholder="Otaq sayı" asp-for="ElanOtaqsayi">
+            <input placeholder="Mərtəbə" asp-for="ElanMertebesayi">
+            <input placeholder="Ümumi mərtəbə sayı" asp-for="ElanUmumiMertebesayi">
+            @*<select id="seher" asp-for="ElanSeherId" asp-items="ViewBag.Seher">
+            </select>*@
+            <select id="seher" name="ElanSeherId">
+                @foreach (var item in ViewBag.Seher)
+                {
+                    <option value="@item.SeherId">@item.SeherAd</option>
+
+                }
+            </select>
+            <select id="rayon" name="ElanRayonId">
+                <option value="">Rayon</option>
+                @foreach (var item in ViewBag.Rayon)
+                {
+                    <option value="@item.RayonId" SeherId="@item.RayonSeherId">@item.RayonAd</option>
+
+                }
+            </select>
+            <input placeholder="Qiymət" asp-for="ElanQiymet">
+            <input placeholder="Sahə" asp-for="ElanSahe">
+            <textarea placeholder="Əlavə məlumat" asp-for="ElanMelumat"></textarea>
+            <hr style="margin: 20px 0;" />
+            <ul class="uli">
+                <li><label>@Html.CheckBox("ElanInternet", false) İnternet </label></li>
+                <li><label>@Html.CheckBox("ElanLift", false) Lift </label></li>
+                <li><label>@Html.CheckBox("ElanQaz", false) Qaz </label></li>
+                <li><label>@Html.CheckBox("ElanKupça", false) Kupça </label></li>
+                <li><label>@Html.CheckBox("ElanTelefon", false) Telefon </label></li>
+                <li><label>@Html.CheckBox("ElanKombi", false) Kombi </label></li>
+                <li><label>@Html.CheckBox("ElanKondisioner", false) Kondisioner </label></li>
+                <li><label>@Html.CheckBox("ElanTemir", false) Temir </label></li>
+            </ul>
+            <hr style="margin: 20px 0;" />
+            <input type="file" multiple name="Sekil">
+            <button>Yerləşdir</button>
+        </div>
+    </form>
+</section>
+
+
+
+
+@*<input type="checkbox" id="internet" asp-for="elan.ElanInternet">
+    <label for="internet"> İnternet</label><br>
+    <input type="checkbox" id="lift" asp-for="elan.ElanLift">
+    <label for="lift"> Lift</label><br>
+    <input type="checkbox" id="qaz" asp-for="elan.ElanQaz">
+    <label for="qaz"> Qaz</label><br>
+    <input type="checkbox" id="kupca" asp-for="elan.ElanKupça">
+    <label for="kupca"> Kupça</label><br>
+    <input type="checkbox" id="telefon" asp-for="elan.ElanTelefon">
+    <label for="telefon"> Telefon</label><br>
+    <input type="checkbox" id="kombi" asp-for="elan.ElanKombi">
+    <label for="kombi"> Kombi</label><br>
+    <input type="checkbox" id="kondisioner" asp-for="elan.ElanKondisioner">
+    <label for="kondisioner"> Kondisioner</label><br>
+    <input type="checkbox" id="temir" asp-for="elan.ElanTemir">
+    <label for="temir"> Təmir</label><br>*@
